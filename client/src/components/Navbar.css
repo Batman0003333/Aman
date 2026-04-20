@@ -1,0 +1,61 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 4rem;
+  background: linear-gradient(to bottom, rgba(5,0,3,0.98), transparent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.navbar--scrolled {
+  background: rgba(5,0,3,0.97);
+  border-bottom-color: rgba(204,0,0,0.15);
+  backdrop-filter: blur(6px);
+}
+
+.navbar__logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  color: #cc0000;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 20px rgba(204,0,0,0.6);
+  text-decoration: none;
+  animation: logoFlicker 6s 3s infinite;
+}
+
+@keyframes logoFlicker {
+  0%, 92%, 100% { opacity: 1; }
+  94% { opacity: 0.1; }
+  96% { opacity: 1; }
+  98% { opacity: 0.3; }
+}
+
+.navbar__links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.navbar__links a {
+  color: #9a8a7a;
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.navbar__links a:hover {
+  color: #cc0000;
+  text-shadow: 0 0 10px rgba(204,0,0,0.5);
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 1rem 1.5rem; }
+  .navbar__links { gap: 1.2rem; }
+  .navbar__links a { font-size: 0.65rem; }
+}

@@ -1,0 +1,52 @@
+.lights-bar {
+  display: flex;
+  padding: 0 4rem;
+  overflow: hidden;
+  position: relative;
+  height: 28px;
+  align-items: flex-end;
+}
+
+.light-wire {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #1a0a00, #2a1000, #1a0a00);
+  position: absolute;
+  top: 8px;
+  left: 0; right: 0;
+}
+
+.light {
+  width: 14px;
+  height: 20px;
+  border-radius: 50% 50% 40% 40%;
+  margin: 0 18px;
+  position: relative;
+  top: 0;
+  flex-shrink: 0;
+  animation: bulbFlicker 3s infinite;
+}
+
+.light::before {
+  content: '';
+  width: 6px;
+  height: 5px;
+  background: #3a2a10;
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 1px;
+}
+
+@keyframes bulbFlicker {
+  0%, 85%, 100% { opacity: 1; filter: brightness(1); }
+  87% { opacity: 0.2; filter: brightness(0.2); }
+  89% { opacity: 0.9; }
+  91% { opacity: 0.3; }
+  93% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .lights-bar { padding: 0 1.5rem; }
+}
